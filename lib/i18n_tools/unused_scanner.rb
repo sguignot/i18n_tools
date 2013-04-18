@@ -18,7 +18,7 @@ module I18nTools
   
   protected
     def ignore_keys
-      @ignore_keys ||= File.read(".i18nignore_unused").split("\n").reject { |e| e.strip.blank? || e =~ /^#/ }.collect { |key| Regexp.new(Regexp.escape("#{@locale}.#{key}")) } rescue []
+      @ignore_keys ||= File.read(".i18nignore_unused").split("\n").reject { |e| e.strip.blank? || e =~ /^#/ }.collect { |i| Regexp.new(i) } rescue []
     end
   end
 end
